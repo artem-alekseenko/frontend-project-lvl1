@@ -22,3 +22,9 @@ https://asciinema.org/a/3uMcQMU1gGunmvpopsFi3sPFy
 Пример установки и запуска игры:
 https://asciinema.org/a/Hivih94JTAXtIoumdpUbQWAIE
 
+#### Brain-prime
+
+Пример установки и запуска игры:
+https://asciinema.org/a/8YaAsyz4ANO6UzEDQ0yUht2Ne
+
+
