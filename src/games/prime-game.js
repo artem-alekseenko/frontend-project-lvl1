@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import Game from '../index.js';
+import gameStart from '../index.js';
 
 const round = () => {
   const number = Math.floor(Math.random() * 100);
@@ -22,12 +22,10 @@ const round = () => {
 };
 
 const primeGame = () => {
-  const game = new Game({
+  gameStart({
     gameRule: 'Answer "yes" if given number is prime. Otherwise answer "no".',
     round,
   });
-
-  game.start();
 };
 
 export default primeGame;

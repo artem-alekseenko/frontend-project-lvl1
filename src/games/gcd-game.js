@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import Game from '../index.js';
+import gameStart from '../index.js';
 
 const round = () => {
   const firstNumber = Math.floor(Math.random() * 100);
@@ -23,12 +23,10 @@ const round = () => {
 };
 
 const gcdGame = () => {
-  const game = new Game({
+  gameStart({
     gameRule: 'Find the greatest common divisor of given numbers.',
     round,
   });
-
-  game.start();
 };
 
 export default gcdGame;

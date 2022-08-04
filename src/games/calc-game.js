@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import Game from '../index.js';
+import gameStart from '../index.js';
 
 const round = () => {
   const firstNumber = Math.floor(Math.random() * 100);
@@ -15,12 +15,10 @@ const round = () => {
 };
 
 const calcGame = () => {
-  const game = new Game({
+  gameStart({
     gameRule: 'What is the result of the expression?',
     round,
   });
-
-  game.start();
 };
 
 export default calcGame;

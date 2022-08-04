@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import Game from '../index.js';
+import gameStart from '../index.js';
 
 const round = () => {
   const question = Math.floor(Math.random() * 100);
@@ -14,12 +14,10 @@ const round = () => {
 };
 
 const evenGame = () => {
-  const game = new Game({
+  gameStart({
     gameRule: 'Answer "yes" if the number is even, otherwise answer "no".',
     round,
   });
-
-  game.start();
 };
 
 export default evenGame;

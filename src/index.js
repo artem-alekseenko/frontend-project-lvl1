@@ -1,35 +1,41 @@
 import getUserName from './cli.js';
 
 const MAX_ATTEMPTS = 3;
+let attempt = 0;
 
-export default class Game {
-  constructor(options) {
-    this.gameRule = options.gameRule;
-    this.gameRound = options.round;
-    this.attempt = 0;
+const gameRound = (options) => {
+  const { round, userName } = options;
+  const { userAnswer, correctAnswer } = round();
+
+  if (userAnswer !== correctAnswer) {
+    attempt = 0;
+    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
+    return;
   }
 
-  round() {
-    const { userAnswer, correctAnswer } = this.gameRound();
+  console.log('Correct!');
+  attempt += 1;
 
-    if (userAnswer !== correctAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${this.userName}!`);
-      return;
-    }
-
-    console.log('Correct!');
-    this.attempt += 1;
-
-    if (this.attempt < MAX_ATTEMPTS) {
-      this.round();
-    } else {
-      console.log(`Congratulations, ${this.userName}!`);
-    }
+  if (attempt < MAX_ATTEMPTS) {
+    gameRound({
+      round,
+      userName,
+    });
+  } else {
+    attempt = 0;
+    console.log(`Congratulations, ${userName}!`);
   }
+};
 
-  start() {
-    this.userName = getUserName();
-    console.log(this.gameRule);
-    this.round();
-  }
-}
+const gameStart = (options) => {
+  const { gameRule, round } = options;
+  const userName = getUserName();
+  console.log(`Hello, ${userName}!`);
+  console.log(gameRule);
+  gameRound({
+    round,
+    userName,
+  });
+};
+
+export default gameStart;

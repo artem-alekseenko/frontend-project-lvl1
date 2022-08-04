@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import Game from '../index.js';
+import gameStart from '../index.js';
 
 const round = () => {
   const progressionNumber = Math.floor(Math.random() * 10);
@@ -29,12 +29,10 @@ const round = () => {
 };
 
 const progressionGame = () => {
-  const game = new Game({
+  gameStart({
     gameRule: 'What number is missing in the progression?',
     round,
   });
-
-  game.start();
 };
 
 export default progressionGame;
