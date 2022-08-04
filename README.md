@@ -16,3 +16,9 @@ https://asciinema.org/a/AHN6xAPmE0XJTCPdLOb8XGFQo
 
 Пример установки и запуска игры:
 https://asciinema.org/a/3uMcQMU1gGunmvpopsFi3sPFy
+
+#### Brain-progression
+
+Пример установки и запуска игры:
+https://asciinema.org/a/Hivih94JTAXtIoumdpUbQWAIE
+
