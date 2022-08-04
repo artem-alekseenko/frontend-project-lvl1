@@ -13,3 +13,6 @@ https://asciinema.org/connect/97b86be4-2138-4f7b-b41d-e609d0847d15
 https://asciinema.org/a/AHN6xAPmE0XJTCPdLOb8XGFQo
 
 #### Brain-gcd
+
+Пример установки и запуска игры:
+https://asciinema.org/a/3uMcQMU1gGunmvpopsFi3sPFy
