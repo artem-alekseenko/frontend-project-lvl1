@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import findOutUserNameAndGreetings from '../src/cli.js';
+import getUserName from '../src/cli.js';
 
-findOutUserNameAndGreetings();
+console.log(`Hello ${getUserName()}!`);
