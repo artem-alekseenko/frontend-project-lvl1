@@ -1,37 +1,25 @@
 import readlineSync from 'readline-sync';
-import getUserName from '../cli.js';
+import Game from '../index.js';
 
-let attempt = 0;
-const MAX_ATTEMPTS = 3;
-
-const getRound = (userName) => {
-  const randomNumber = Math.floor(Math.random() * 100);
-  console.log(`Question: ${randomNumber}`);
-
+const round = () => {
+  const question = Math.floor(Math.random() * 100);
+  console.log(`Question: ${question}`);
   const userAnswer = readlineSync.question('Your answer: ');
-  const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
+  const correctAnswer = question % 2 === 0 ? 'yes' : 'no';
 
-  if (userAnswer !== correctAnswer) {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'. \nLet's try again, ${userName}!`);
-    return;
-  }
-
-  console.log('Correct!');
-  attempt += 1;
-
-  if (attempt < MAX_ATTEMPTS) {
-    getRound(userName);
-  } else {
-    console.log(`Congratulations, ${userName}!`);
-  }
+  return {
+    userAnswer,
+    correctAnswer,
+  };
 };
 
 const evenGame = () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+  const game = new Game({
+    gameRule: 'Answer "yes" if the number is even, otherwise answer "no".',
+    round,
+  });
 
-  const userName = getUserName();
-
-  getRound(userName);
+  game.start();
 };
 
 export default evenGame;
