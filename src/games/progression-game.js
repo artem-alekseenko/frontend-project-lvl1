@@ -18,7 +18,7 @@ const round = () => {
   const correctAnswer = progression[randomIndex];
   progression[randomIndex] = '..';
 
-  console.log(`Question: ${progression.join(',')}`);
+  console.log(`Question: ${progression.join(' ')}`);
 
   const userAnswer = Number(readlineSync.question('Your answer: '));
 
